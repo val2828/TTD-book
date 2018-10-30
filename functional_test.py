@@ -32,5 +32,6 @@ class NewVisitorTest (unittest.TestCase):
 
         # Customer visits the URL and sees his list in-tact
 
+
 if __name__ == '__main__':
     unittest.main(warnings='ignore')
