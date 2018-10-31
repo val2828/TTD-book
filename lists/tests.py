@@ -26,7 +26,4 @@ class HomePageTest(TestCase):
         self.assertEqual(html, expected_html)"""
 
         response = self.client.get('/')
-      
         self.assertTemplateUsed(response, 'home.html')
-
-        print(response)
