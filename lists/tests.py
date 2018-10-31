@@ -10,7 +10,7 @@ class HomePageTest(TestCase):
         found = resolve('/')
         self.assertEqual(found.func, home_page)
 
-    def test_home_page_returns_correct_html(self):
+    def test_uses_home_template(self):
         """ 
        The version of code without using the Test Client
        # Django sees the request object
@@ -27,3 +27,7 @@ class HomePageTest(TestCase):
 
         response = self.client.get('/')
         self.assertTemplateUsed(response, 'home.html')
+
+    def test_can_save_a_POST_request(self):
+        response = self.client.post('/', data={'item_text' : 'A new list item'})
+        self.assertIn('A new list item', response.content.decode())
