@@ -32,7 +32,7 @@ class NewVisitorTest (unittest.TestCase):
         # Upon hitting Enter the page is updated and now the lists "1 : customer-input
         # input text " as an item in the To-Do list
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(1)
+        time.sleep(1000)
         
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
