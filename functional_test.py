@@ -28,18 +28,15 @@ class NewVisitorTest (unittest.TestCase):
             'Enter a to-do item'
         )
         
-        inputbox.send_keys('Buy peackock feathers')
+        inputbox.send_keys('Buy peacock feathers')
         # Upon hitting Enter the page is updated and now the lists "1 : customer-input
         # input text " as an item in the To-Do list
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(1000)
+        time.sleep(1)
         
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
-        self.assertTrue(
-            any(row.text == '1: Buy peackock feathers' for row in rows),
-            "New to-do item did not appear in table"
-        )
+        self.assertIn('1: Buy peacock feathers', [row.text for row in rows])
         # There is another text box whih invites to add another item. 
         self.fail('Finish the test!')
         # Another update occurs
