@@ -38,7 +38,7 @@ class NewVisitorTest (unittest.TestCase):
         # input text " as an item in the To-Do list
         inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
-        self.check_for_row_in_list_table('1: buy peacock feathers')
+        self.check_for_row_in_list_table('1: Buy peacock feathers')
         
         # There is another text box whih invites to add another item. 
         inputbox = self.browser.find_element_by_id('id_new_item')
