@@ -54,5 +54,4 @@ class NewVisitorTest (LiveServerTestCase):
         # Customer visits the URL and sees his list in-tact
         self.fail('Finish the test!')
 
-if __name__ == '__main__':
-    unittest.main(warnings='ignore')
+
